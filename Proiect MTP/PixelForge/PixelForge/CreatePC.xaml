@@ -1,0 +1,193 @@
+﻿<Window x:Class="PixelForge.CreatePC"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="CreatePC" Height="800" Width="1500"
+        ResizeMode="CanResize" Background="#0B1120"
+        WindowStartupLocation="CenterScreen">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <!-- Bara de sus -->
+            <RowDefinition Height="*" />
+            <!-- Conținut principal -->
+            <RowDefinition Height="80" />
+            <!-- Bara de jos cu Pret Total și Comanda -->
+        </Grid.RowDefinitions>
+
+        <!-- Bara de sus cu buton Înapoi -->
+        <Grid Background="#1E293B" Height="60" Grid.Row="0">
+            <Button Content="⟵ Înapoi"
+                    Click="BackButton_Click"
+                    Background="#334155"
+                    Foreground="White"
+                    FontSize="16"
+                    FontWeight="Bold"
+                    Margin="10"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    Cursor="Hand" />
+        </Grid>
+
+        <!-- Conținut principal -->
+        <Grid Grid.Row="1" Margin="30">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="300" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <!-- Panoul din stânga cu butoane și zone de drop -->
+            <ScrollViewer VerticalScrollBarVisibility="Auto" Grid.Column="0">
+                <StackPanel VerticalAlignment="Top">
+
+                    <!-- CPU -->
+                    <Button Content="CPU" Click="CpuButton_Click" Margin="0,0,0,5" Height="40" />
+                    <Border x:Name="CpuDropZone" BorderBrush="White" BorderThickness="2" Height="50" Margin="0,0,0,20"
+                    AllowDrop="True"
+                    DragEnter="DropZone_DragEnter"
+                    DragLeave="DropZone_DragLeave"
+                    Drop="CpuDropZone_Drop">
+                        <TextBlock x:Name="CpuSelectedText" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16" Text="Trage CPU aici" />
+                    </Border>
+
+                    <!-- Cooler -->
+                    <Button Content="Cooler" Click="CoolerButton_Click" Margin="0,0,0,5" Height="40" />
+                    <Border x:Name="CoolerDropZone" BorderBrush="White" BorderThickness="2" Height="50" Margin="0,0,0,20"
+                    AllowDrop="True"
+                    DragEnter="DropZone_DragEnter"
+                    DragLeave="DropZone_DragLeave"
+                    Drop="CoolerZone_Drop">
+                        <TextBlock x:Name="CoolerSelectedText" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16" Text="Trage Cooler aici" />
+                    </Border>
+
+                    <!-- Placa de Bază -->
+                    <Button Content="Placa de Bază" Click="MbButton_Click" Margin="0,0,0,5" Height="40" />
+                    <Border x:Name="MbDropZone" BorderBrush="White" BorderThickness="2" Height="50" Margin="0,0,0,20"
+                    AllowDrop="True"
+                    DragEnter="DropZone_DragEnter"
+                    DragLeave="DropZone_DragLeave"
+                    Drop="MbDropZone_Drop">
+                        <TextBlock x:Name="MbSelectedText" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16" Text="Trage Placa de Bază aici" />
+                    </Border>
+
+                    <!-- RAMI -->
+                    <Button Content="RAMI" Click="RamiButton_Click" Margin="0,0,0,5" Height="40" />
+                    <Border x:Name="RamiDropZone" BorderBrush="White" BorderThickness="2" Height="50" Margin="0,0,0,20"
+                    AllowDrop="True"
+                    DragEnter="DropZone_DragEnter"
+                    DragLeave="DropZone_DragLeave"
+                    Drop="RamiDropZone_Drop">
+                        <TextBlock x:Name="RamiSelectedText" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16" Text="Trage RAMI aici" />
+                    </Border>
+
+                    <!-- Stocare -->
+                    <Button Content="Stocare" Click="StocareButton_Click" Margin="0,0,0,5" Height="40" />
+                    <Border x:Name="StocareDropZone" BorderBrush="White" BorderThickness="2" Height="50" Margin="0,0,0,20"
+                    AllowDrop="True"
+                    DragEnter="DropZone_DragEnter"
+                    DragLeave="DropZone_DragLeave"
+                    Drop="StocareDropZone_Drop">
+                        <TextBlock x:Name="StocareSelectedText" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16" Text="Trage Stocare aici" />
+                    </Border>
+
+                    <!-- GPU -->
+                    <Button Content="GPU" Click="GpuButton_Click" Margin="0,0,0,5" Height="40" />
+                    <Border x:Name="GpuDropZone" BorderBrush="White" BorderThickness="2" Height="50" Margin="0,0,0,20"
+                    AllowDrop="True"
+                    DragEnter="DropZone_DragEnter"
+                    DragLeave="DropZone_DragLeave"
+                    Drop="GpuDropZone_Drop">
+                        <TextBlock x:Name="GpuSelectedText" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16" Text="Trage GPU aici" />
+                    </Border>
+
+                    <!-- Carcasă -->
+                    <Button Content="Carcasă" Click="CaseButton_Click" Margin="0,0,0,5" Height="40" />
+                    <Border x:Name="CarcasaDropZone" BorderBrush="White" BorderThickness="2" Height="50" Margin="0,0,0,20"
+                    AllowDrop="True"
+                    DragEnter="DropZone_DragEnter"
+                    DragLeave="DropZone_DragLeave"
+                    Drop="CaseDropZone_Drop">
+                        <TextBlock x:Name="CarcasaSelectedText" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16" Text="Trage Carcasă aici" />
+                    </Border>
+
+                    <!-- PSU -->
+                    <Button Content="PSU" Click="PsuButton_Click" Margin="0,0,0,5" Height="40" />
+                    <Border x:Name="PsuDropZone" BorderBrush="White" BorderThickness="2" Height="50" Margin="0,0,0,20"
+                    AllowDrop="True"
+                    DragEnter="DropZone_DragEnter"
+                    DragLeave="DropZone_DragLeave"
+                    Drop="PsuDropZone_Drop">
+                        <TextBlock x:Name="PsuSelectedText" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16" Text="Trage PSU aici" />
+                    </Border>
+
+                </StackPanel>
+            </ScrollViewer>
+
+            <!-- Zona pentru carduri componente în dreapta -->
+            <ScrollViewer Grid.Column="1" Margin="30,0,0,0">
+                <StackPanel x:Name="ComponentCardsPanel">
+                    <!-- Carduri generate dinamic aici -->
+                </StackPanel>
+            </ScrollViewer>
+        </Grid>
+
+
+
+        <!-- Bara de jos cu Pret Total și buton Comandă -->
+        <Grid Grid.Row="2" Background="#1E293B"  >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="150" />
+            </Grid.ColumnDefinitions>
+
+            <Grid Margin="10" VerticalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <!-- Pret total pe stanga, ocupa tot spatiul ramas -->
+                    <ColumnDefinition Width="Auto" />
+                    <!-- Client label + textbox -->
+                    <ColumnDefinition Width="Auto" />
+                    <!-- Buton Comanda -->
+                </Grid.ColumnDefinitions>
+
+                <!-- Pret total -->
+                <Border BorderBrush="White" BorderThickness="2" VerticalAlignment="Center" Padding="5" Grid.Column="0" HorizontalAlignment="Left">
+                    <TextBlock x:Name="PretTotalTextBlock"
+                   Text="Preț Total: 0 RON"
+                   FontSize="18"
+                   FontWeight="Bold"
+                   Foreground="White" />
+                </Border>
+
+                <!-- Client label + textbox -->
+                <StackPanel Orientation="Horizontal" Grid.Column="1" VerticalAlignment="Center" Margin="10,0" HorizontalAlignment="Right">
+                    <TextBlock Text="Client:" 
+                   Foreground="White" 
+                   FontSize="16" 
+                   VerticalAlignment="Center"
+                   Margin="0,0,5,0"/>
+                    <TextBox x:Name="ClientNameTextBox"
+                 Width="150"
+                 Height="30"
+                 VerticalContentAlignment="Center"
+                 FontSize="14" />
+                </StackPanel>
+
+                <!-- Buton Comanda -->
+                <Button Content="Comandă"
+            Grid.Column="2"
+            Height="35"
+            Background="#3B82F6"
+            Foreground="White"
+            FontSize="16"
+            FontWeight="Bold"
+            Click="ComandaButton_Click"
+            Cursor="Hand"
+            VerticalAlignment="Center"
+            Margin="10,0,0,0"/>
+            </Grid>
+        </Grid>
+
+
+    </Grid>
+</Window>

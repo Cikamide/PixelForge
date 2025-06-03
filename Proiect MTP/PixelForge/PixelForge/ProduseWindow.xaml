@@ -1,0 +1,87 @@
+﻿<Window x:Class="PixelForge.ProduseWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Gestionare Produse"
+        Width="1200" Height="800"
+        MinWidth="900" MinHeight="600"
+        Background="#0B1120"
+        ResizeMode="CanResize">
+
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <!-- Header -->
+        <DockPanel Grid.Row="0" Margin="0 0 0 10" LastChildFill="True">
+            <Button Content="Înapoi"
+                    Click="BackButton_Click"
+                    Background="#334155"
+                    Foreground="White"
+                    FontSize="16"
+                    Padding="10,5"
+                    FontWeight="Bold"
+                    Width="120"
+                    Margin="0,0,10,0"
+                    BorderThickness="0"
+                    Cursor="Hand"/>
+            <TextBlock Text="Gestionare Produse"
+                       FontSize="28"
+                       Foreground="White"
+                       FontWeight="Bold"
+                       VerticalAlignment="Center"/>
+        </DockPanel>
+
+        <!-- Butoane componente -->
+        <WrapPanel Grid.Row="1" HorizontalAlignment="Center" Margin="0,0,0,10">
+            <Button Content="CPU" Click="CpuButton_Click" Tag="CPU" Width="120" Margin="5" Padding="10,5" FontWeight="Bold"/>
+            <Button Content="Cooler" Click="CoolerButton_Click" Tag="Cooler" Width="120" Margin="5" Padding="10,5" FontWeight="Bold"/>
+            <Button Content="MB" Click="MbButton_Click" Tag="MB" Width="120" Margin="5" Padding="10,5" FontWeight="Bold"/>
+            <Button Content="RAM" Click="RamiButton_Click" Tag="RAM" Width="120" Margin="5" Padding="10,5" FontWeight="Bold"/>
+            <Button Content="Stocare" Click="StocareButton_Click" Tag="Stocare" Width="120" Margin="5" Padding="10,5" FontWeight="Bold"/>
+            <Button Content="GPU" Click="GpuButton_Click" Tag="GPU" Width="120" Margin="5" Padding="10,5" FontWeight="Bold"/>
+            <Button Content="Carcasă" Click="CaseButton_Click" Tag="Case" Width="120" Margin="5" Padding="10,5" FontWeight="Bold"/>
+            <Button Content="PSU" Click="PsuButton_Click" Tag="PSU" Width="120" Margin="5" Padding="10,5" FontWeight="Bold"/>
+        </WrapPanel>
+
+        <!-- Lista produse (scrollabilă) -->
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Lista produse -->
+            <ScrollViewer Grid.Column="0" VerticalScrollBarVisibility="Auto">
+                <StackPanel x:Name="ProductListPanel" Margin="0,0,0,10" HorizontalAlignment="Left"/>
+            </ScrollViewer>
+
+            <!-- Formular în dreapta -->
+            <StackPanel x:Name="FormPanel"
+                Margin="0,0,0,0"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Top"/>
+        </Grid>
+
+        <!-- Secțiune adăugare produs -->
+        <Border Grid.Row="3" Background="#1E293B" Padding="15" CornerRadius="10" Margin="0,10,0,0">
+            <StackPanel Orientation="Vertical">
+                <TextBlock Text="Adaugă produs nou"
+                           FontSize="20"
+                           Foreground="White"
+                           FontWeight="Bold"
+                           Margin="0,0,0,10"/>
+                
+                <Button Content="Adaugă"
+                        Click="AdaugaButton_Click"
+                        Background="#22C55E"
+                        Foreground="White"
+                        Padding="10"
+                        FontWeight="Bold"
+                        HorizontalAlignment="Right"/>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>

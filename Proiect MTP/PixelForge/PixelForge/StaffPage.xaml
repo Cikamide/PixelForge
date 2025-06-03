@@ -1,0 +1,70 @@
+﻿<Window x:Class="PixelForge.StaffPage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="StaffPage" Height="800" Width="1500"
+        ResizeMode="CanResize" Background="#0B1120">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <!-- Pentru bara de sus -->
+            <RowDefinition Height="*"/>
+            <!-- Conținut principal -->
+        </Grid.RowDefinitions>
+
+        <!-- Bara de sus cu buton logout -->
+        <Grid Background="#1E293B" Height="60">
+            <Button Content="⟵ Logout"
+                    Click="LogoutButton_Click"
+                    Background="#334155"
+                    Foreground="White"
+                    FontSize="16"
+                    FontWeight="Bold"
+                    Padding="10,5"
+                    Margin="10"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    Cursor="Hand"/>
+        </Grid>
+
+        <!-- Conținutul principal -->
+        <StackPanel Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" Width="400">
+            <TextBlock Text="Panou Staff"
+                       FontSize="36"
+                       FontWeight="Bold"
+                       Foreground="White"
+                       HorizontalAlignment="Center"
+                       Margin="0,0,0,40" />
+
+            <Button Content="Gestionare Produse"
+                    Click="ProduseButton_Click"
+                    Background="#3B82F6"
+                    Foreground="White"
+                    FontSize="20"
+                    FontWeight="Bold"
+                    Height="60"
+                    Margin="0,10"
+                    HorizontalAlignment="Stretch" />
+
+            <Button Content="Gestionare Comenzi"
+                    Click="ComenziButton_Click"
+                    Background="#3B82F6"
+                    Foreground="White"
+                    FontSize="20"
+                    FontWeight="Bold"
+                    Height="60"
+                    Margin="0,10"
+                    HorizontalAlignment="Stretch" />
+
+            <Button Content="Gestionare Conturi"
+                    Click="ConturiButton_Click"
+                    Background="#3B82F6"
+                    Foreground="White"
+                    FontSize="20"
+                    FontWeight="Bold"
+                    Height="60"
+                    Margin="0,10"
+                    HorizontalAlignment="Stretch" />
+        </StackPanel>
+    </Grid>
+</Window>

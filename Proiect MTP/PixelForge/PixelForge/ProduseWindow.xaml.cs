@@ -39,7 +39,7 @@ namespace PixelForge
 
         private void CpuButton_Click(object sender, RoutedEventArgs e)
         {
-            ProductListPanel.Children.Clear(); // curățăm afișajul
+            ProductListPanel.Children.Clear(); 
 
             using (var connection = new SQLiteConnection("Data Source=DataBase.db"))
             {
@@ -95,7 +95,7 @@ namespace PixelForge
                             Text = $"Preț: {reader["Pret"]} RON"
                         });
 
-                        // --- Adaugă butoanele ---
+                        
                         StackPanel buttonsPanel = new StackPanel
                         {
                             Orientation = Orientation.Horizontal,
@@ -151,7 +151,7 @@ namespace PixelForge
 
         private void CoolerButton_Click(object sender, RoutedEventArgs e)
         {
-            ProductListPanel.Children.Clear(); // curățăm afișajul
+            ProductListPanel.Children.Clear(); 
 
             using (var connection = new SQLiteConnection("Data Source=DataBase.db"))
             {
@@ -209,7 +209,7 @@ namespace PixelForge
                             Text = $"Preț: {reader["Pret"]} RON"
                         });
 
-                        // Butoanele Modifică și Șterge
+                        
                         StackPanel buttonsPanel = new StackPanel
                         {
                             Orientation = Orientation.Horizontal,
@@ -265,7 +265,7 @@ namespace PixelForge
 
         private void MbButton_Click(object sender, RoutedEventArgs e)
         {
-            ProductListPanel.Children.Clear(); // curățăm afișajul
+            ProductListPanel.Children.Clear(); 
 
             using (var connection = new SQLiteConnection("Data Source=DataBase.db"))
             {
@@ -313,7 +313,7 @@ namespace PixelForge
                         panel.Children.Add(new TextBlock { Text = $"Sloturi M.2: {reader["SloturiM2"]}" });
                         panel.Children.Add(new TextBlock { Text = $"Preț: {reader["Pret"]} RON" });
 
-                        // Butoanele
+                        
                         StackPanel buttonsPanel = new StackPanel
                         {
                             Orientation = Orientation.Horizontal,
@@ -367,7 +367,7 @@ namespace PixelForge
 
         private void RamiButton_Click(object sender, RoutedEventArgs e)
         {
-            ProductListPanel.Children.Clear(); // curățăm afișajul
+            ProductListPanel.Children.Clear(); 
 
             using (var connection = new SQLiteConnection("Data Source=DataBase.db"))
             {
@@ -414,7 +414,7 @@ namespace PixelForge
                         panel.Children.Add(new TextBlock { Text = $"Număr module: {reader["NrModule"]}" });
                         panel.Children.Add(new TextBlock { Text = $"Preț: {reader["Pret"]} RON" });
 
-                        // Butoanele
+                        
                         StackPanel buttonsPanel = new StackPanel
                         {
                             Orientation = Orientation.Horizontal,
@@ -468,7 +468,7 @@ namespace PixelForge
 
         private void StocareButton_Click(object sender, RoutedEventArgs e)
         {
-            ProductListPanel.Children.Clear(); // curățăm afișajul
+            ProductListPanel.Children.Clear(); 
 
             using (var connection = new SQLiteConnection("Data Source=DataBase.db"))
             {
@@ -514,7 +514,7 @@ namespace PixelForge
                         panel.Children.Add(new TextBlock { Text = $"Tip: {reader["Tip"]}" });
                         panel.Children.Add(new TextBlock { Text = $"Preț: {reader["Pret"]} RON" });
 
-                        // Butoanele
+                      
                         StackPanel buttonsPanel = new StackPanel
                         {
                             Orientation = Orientation.Horizontal,
@@ -569,7 +569,7 @@ namespace PixelForge
 
         private void GpuButton_Click(object sender, RoutedEventArgs e)
         {
-            ProductListPanel.Children.Clear(); // curățăm afișajul
+            ProductListPanel.Children.Clear(); 
 
             using (var connection = new SQLiteConnection("Data Source=DataBase.db"))
             {
@@ -614,7 +614,7 @@ namespace PixelForge
                         panel.Children.Add(new TextBlock { Text = $"Memorie: {reader["MemorieGB"]} GB" });
                         panel.Children.Add(new TextBlock { Text = $"Preț: {reader["Pret"]} RON" });
 
-                        // Butoane
+                        
                         StackPanel buttonsPanel = new StackPanel
                         {
                             Orientation = Orientation.Horizontal,
@@ -669,7 +669,7 @@ namespace PixelForge
 
         private void CaseButton_Click(object sender, RoutedEventArgs e)
         {
-            ProductListPanel.Children.Clear(); // curățăm afișajul
+            ProductListPanel.Children.Clear(); 
 
             using (var connection = new SQLiteConnection("Data Source=DataBase.db"))
             {
@@ -714,7 +714,7 @@ namespace PixelForge
                         panel.Children.Add(new TextBlock { Text = $"Volum: {reader["Volum"]} L" });
                         panel.Children.Add(new TextBlock { Text = $"Preț: {reader["Pret"]} RON" });
 
-                        // Butoanele Modifică și Șterge
+                       
                         StackPanel buttonsPanel = new StackPanel
                         {
                             Orientation = Orientation.Horizontal,
@@ -770,7 +770,7 @@ namespace PixelForge
 
         private void PsuButton_Click(object sender, RoutedEventArgs e)
         {
-            ProductListPanel.Children.Clear(); // curățăm afișajul
+            ProductListPanel.Children.Clear(); 
 
             using (var connection = new SQLiteConnection("Data Source=DataBase.db"))
             {
@@ -827,7 +827,7 @@ namespace PixelForge
                             Text = $"Preț: {reader["Pret"]} RON"
                         });
 
-                        // Butoanele Modifică și Șterge
+                        
                         StackPanel buttonsPanel = new StackPanel
                         {
                             Orientation = Orientation.Horizontal,
@@ -962,7 +962,7 @@ namespace PixelForge
                 }
             }
 
-            // Construim formularul cu datele existente
+           
             Border card = new Border
             {
                 Background = Brushes.White,
@@ -974,22 +974,22 @@ namespace PixelForge
 
             StackPanel panel = new StackPanel { Margin = new Thickness(5) };
 
-            // Nume
+            
             panel.Children.Add(new TextBlock { Text = "Nume:", FontWeight = FontWeights.Bold });
             TextBox txtNume = new TextBox { Text = nume, Margin = new Thickness(0, 0, 0, 10) };
             panel.Children.Add(txtNume);
 
-            // Socket
+            
             panel.Children.Add(new TextBlock { Text = "Socket:", FontWeight = FontWeights.Bold });
             TextBox txtSocket = new TextBox { Text = socket, Margin = new Thickness(0, 0, 0, 10) };
             panel.Children.Add(txtSocket);
 
-            // Frecvență
+            
             panel.Children.Add(new TextBlock { Text = "Frecvență (GHz):", FontWeight = FontWeights.Bold });
             TextBox txtFrec = new TextBox { Text = frecventa.ToString(), Margin = new Thickness(0, 0, 0, 10) };
             panel.Children.Add(txtFrec);
 
-            // Cooler inclus
+            
             panel.Children.Add(new TextBlock { Text = "Cooler inclus:", FontWeight = FontWeights.Bold });
             ComboBox cmbCooler = new ComboBox { Margin = new Thickness(0, 0, 0, 10) };
             cmbCooler.Items.Add("Da");
@@ -997,12 +997,12 @@ namespace PixelForge
             cmbCooler.SelectedIndex = coolerInclus ? 0 : 1;
             panel.Children.Add(cmbCooler);
 
-            // Preț
+            
             panel.Children.Add(new TextBlock { Text = "Preț (RON):", FontWeight = FontWeights.Bold });
             TextBox txtPret = new TextBox { Text = pret.ToString(), Margin = new Thickness(0, 0, 0, 20) };
             panel.Children.Add(txtPret);
 
-            // Buton Salvează
+            
             Button btnSalveaza = new Button
             {
                 Content = "Salvează",
@@ -1043,7 +1043,7 @@ namespace PixelForge
                     {
                         MessageBox.Show("Modificare realizată cu succes!", "Succes", MessageBoxButton.OK, MessageBoxImage.Information);
                         FormPanel.Children.Clear();
-                        CpuButton_Click(null, null); // reîncarcă lista
+                        CpuButton_Click(null, null); 
                     }
                     else
                     {
@@ -1085,7 +1085,7 @@ namespace PixelForge
                 }
             }
 
-            // Construim formularul cu datele existente
+            
             Border card = new Border
             {
                 Background = Brushes.White,
@@ -1097,12 +1097,10 @@ namespace PixelForge
 
             StackPanel panel = new StackPanel { Margin = new Thickness(5) };
 
-            // Nume
             panel.Children.Add(new TextBlock { Text = "Nume:", FontWeight = FontWeights.Bold });
             TextBox txtNume = new TextBox { Text = nume, Margin = new Thickness(0, 0, 0, 10) };
             panel.Children.Add(txtNume);
 
-            // AIO (Da/Nu)
             panel.Children.Add(new TextBlock { Text = "AIO:", FontWeight = FontWeights.Bold });
             ComboBox cmbAIO = new ComboBox { Margin = new Thickness(0, 0, 0, 10) };
             cmbAIO.Items.Add("Da");
@@ -1110,17 +1108,16 @@ namespace PixelForge
             cmbAIO.SelectedIndex = aio ? 0 : 1;
             panel.Children.Add(cmbAIO);
 
-            // RPM
+
             panel.Children.Add(new TextBlock { Text = "RPM:", FontWeight = FontWeights.Bold });
             TextBox txtRPM = new TextBox { Text = rpm.ToString(), Margin = new Thickness(0, 0, 0, 10) };
             panel.Children.Add(txtRPM);
 
-            // Preț
             panel.Children.Add(new TextBlock { Text = "Preț (RON):", FontWeight = FontWeights.Bold });
             TextBox txtPret = new TextBox { Text = pret.ToString(), Margin = new Thickness(0, 0, 0, 20) };
             panel.Children.Add(txtPret);
 
-            // Buton Salvează
+
             Button btnSalveaza = new Button
             {
                 Content = "Salvează",
@@ -1159,7 +1156,7 @@ namespace PixelForge
                     {
                         MessageBox.Show("Modificare realizată cu succes!", "Succes", MessageBoxButton.OK, MessageBoxImage.Information);
                         FormPanel.Children.Clear();
-                        CoolerButton_Click(null, null); // presupunem că ai un handler pentru lista coolere
+                        CoolerButton_Click(null, null); 
                     }
                     else
                     {
@@ -1205,7 +1202,7 @@ namespace PixelForge
                 }
             }
 
-            // Construim formularul cu datele existente
+
             Border card = new Border
             {
                 Background = Brushes.White,
@@ -1217,37 +1214,37 @@ namespace PixelForge
 
             StackPanel panel = new StackPanel { Margin = new Thickness(5) };
 
-            // Nume
+
             panel.Children.Add(new TextBlock { Text = "Nume:", FontWeight = FontWeights.Bold });
             TextBox txtNume = new TextBox { Text = nume, Margin = new Thickness(0, 0, 0, 10) };
             panel.Children.Add(txtNume);
 
-            // Socket
+
             panel.Children.Add(new TextBlock { Text = "Socket:", FontWeight = FontWeights.Bold });
             TextBox txtSocket = new TextBox { Text = socket, Margin = new Thickness(0, 0, 0, 10) };
             panel.Children.Add(txtSocket);
 
-            // Memorie
+
             panel.Children.Add(new TextBlock { Text = "Memorie (GB):", FontWeight = FontWeights.Bold });
             TextBox txtMemorie = new TextBox { Text = memorie.ToString(), Margin = new Thickness(0, 0, 0, 10) };
             panel.Children.Add(txtMemorie);
 
-            // Sloturi RAM
+
             panel.Children.Add(new TextBlock { Text = "Sloturi RAM:", FontWeight = FontWeights.Bold });
             TextBox txtSloturiRam = new TextBox { Text = sloturiRam.ToString(), Margin = new Thickness(0, 0, 0, 10) };
             panel.Children.Add(txtSloturiRam);
 
-            // Sloturi M.2
+
             panel.Children.Add(new TextBlock { Text = "Sloturi M.2:", FontWeight = FontWeights.Bold });
             TextBox txtSloturiM2 = new TextBox { Text = sloturiM2.ToString(), Margin = new Thickness(0, 0, 0, 10) };
             panel.Children.Add(txtSloturiM2);
 
-            // Preț
+
             panel.Children.Add(new TextBlock { Text = "Preț (RON):", FontWeight = FontWeights.Bold });
             TextBox txtPret = new TextBox { Text = pret.ToString(), Margin = new Thickness(0, 0, 0, 20) };
             panel.Children.Add(txtPret);
 
-            // Buton Salvează
+
             Button btnSalveaza = new Button
             {
                 Content = "Salvează",
@@ -1334,7 +1331,7 @@ namespace PixelForge
                 }
             }
 
-            // Construim formularul cu datele existente
+
             Border card = new Border
             {
                 Background = Brushes.White,
@@ -1346,32 +1343,30 @@ namespace PixelForge
 
             StackPanel panel = new StackPanel { Margin = new Thickness(5) };
 
-            // Nume
+
             panel.Children.Add(new TextBlock { Text = "Nume:", FontWeight = FontWeights.Bold });
             TextBox txtNume = new TextBox { Text = nume, Margin = new Thickness(0, 0, 0, 10) };
             panel.Children.Add(txtNume);
 
-            // Viteza
+
             panel.Children.Add(new TextBlock { Text = "Viteza (MHz):", FontWeight = FontWeights.Bold });
             TextBox txtViteza = new TextBox { Text = viteza.ToString(), Margin = new Thickness(0, 0, 0, 10) };
             panel.Children.Add(txtViteza);
 
-            // Capacitate
+
             panel.Children.Add(new TextBlock { Text = "Capacitate (GB):", FontWeight = FontWeights.Bold });
             TextBox txtCapacitate = new TextBox { Text = capacitate.ToString(), Margin = new Thickness(0, 0, 0, 10) };
             panel.Children.Add(txtCapacitate);
 
-            // NrModule
+
             panel.Children.Add(new TextBlock { Text = "Număr module:", FontWeight = FontWeights.Bold });
             TextBox txtNrModule = new TextBox { Text = nrModule.ToString(), Margin = new Thickness(0, 0, 0, 10) };
             panel.Children.Add(txtNrModule);
 
-            // Preț
             panel.Children.Add(new TextBlock { Text = "Preț (RON):", FontWeight = FontWeights.Bold });
             TextBox txtPret = new TextBox { Text = pret.ToString(), Margin = new Thickness(0, 0, 0, 20) };
             panel.Children.Add(txtPret);
 
-            // Buton Salvează
             Button btnSalveaza = new Button
             {
                 Content = "Salvează",
@@ -1412,7 +1407,7 @@ namespace PixelForge
                     {
                         MessageBox.Show("Modificare realizată cu succes!", "Succes", MessageBoxButton.OK, MessageBoxImage.Information);
                         FormPanel.Children.Clear();
-                        RamiButton_Click(null, null); // presupunem că ai un handler pentru lista RAM-urilor
+                        RamiButton_Click(null, null); 
                     }
                     else
                     {
@@ -1465,27 +1460,27 @@ namespace PixelForge
 
             StackPanel panel = new StackPanel { Margin = new Thickness(5) };
 
-            // Nume
+
             panel.Children.Add(new TextBlock { Text = "Nume:", FontWeight = FontWeights.Bold });
             TextBox txtNume = new TextBox { Text = nume, Margin = new Thickness(0, 0, 0, 10) };
             panel.Children.Add(txtNume);
 
-            // Capacitate
+
             panel.Children.Add(new TextBlock { Text = "Capacitate (GB):", FontWeight = FontWeights.Bold });
             TextBox txtCapacitate = new TextBox { Text = capacitate.ToString(), Margin = new Thickness(0, 0, 0, 10) };
             panel.Children.Add(txtCapacitate);
 
-            // Tip
+
             panel.Children.Add(new TextBlock { Text = "Tip:", FontWeight = FontWeights.Bold });
             TextBox txtTip = new TextBox { Text = tip, Margin = new Thickness(0, 0, 0, 10) };
             panel.Children.Add(txtTip);
 
-            // Preț
+
             panel.Children.Add(new TextBlock { Text = "Preț (RON):", FontWeight = FontWeights.Bold });
             TextBox txtPret = new TextBox { Text = pret.ToString(), Margin = new Thickness(0, 0, 0, 20) };
             panel.Children.Add(txtPret);
 
-            // Buton Salvează
+
             Button btnSalveaza = new Button
             {
                 Content = "Salvează",
@@ -1524,7 +1519,7 @@ namespace PixelForge
                     {
                         MessageBox.Show("Modificare realizată cu succes!", "Succes", MessageBoxButton.OK, MessageBoxImage.Information);
                         FormPanel.Children.Clear();
-                        StocareButton_Click(null, null); // presupunem că ai un handler pentru lista stocărilor
+                        StocareButton_Click(null, null); 
                     }
                     else
                     {
@@ -1575,22 +1570,22 @@ namespace PixelForge
 
             StackPanel panel = new StackPanel { Margin = new Thickness(5) };
 
-            // Nume
+
             panel.Children.Add(new TextBlock { Text = "Nume:", FontWeight = FontWeights.Bold });
             TextBox txtNume = new TextBox { Text = nume, Margin = new Thickness(0, 0, 0, 10) };
             panel.Children.Add(txtNume);
 
-            // Memorie (GB)
+
             panel.Children.Add(new TextBlock { Text = "Memorie (GB):", FontWeight = FontWeights.Bold });
             TextBox txtMemorie = new TextBox { Text = memorieGb.ToString(), Margin = new Thickness(0, 0, 0, 10) };
             panel.Children.Add(txtMemorie);
 
-            // Preț
+
             panel.Children.Add(new TextBlock { Text = "Preț (RON):", FontWeight = FontWeights.Bold });
             TextBox txtPret = new TextBox { Text = pret.ToString(), Margin = new Thickness(0, 0, 0, 20) };
             panel.Children.Add(txtPret);
 
-            // Buton Salvează
+
             Button btnSalveaza = new Button
             {
                 Content = "Salvează",
@@ -1627,7 +1622,7 @@ namespace PixelForge
                     {
                         MessageBox.Show("Modificare realizată cu succes!", "Succes", MessageBoxButton.OK, MessageBoxImage.Information);
                         FormPanel.Children.Clear();
-                        GpuButton_Click(null, null); // presupunem că ai handler pentru lista GPU-urilor
+                        GpuButton_Click(null, null); 
                     }
                     else
                     {
@@ -1678,22 +1673,20 @@ namespace PixelForge
 
             StackPanel panel = new StackPanel { Margin = new Thickness(5) };
 
-            // Nume
+
             panel.Children.Add(new TextBlock { Text = "Nume:", FontWeight = FontWeights.Bold });
             TextBox txtNume = new TextBox { Text = nume, Margin = new Thickness(0, 0, 0, 10) };
             panel.Children.Add(txtNume);
 
-            // Volum
             panel.Children.Add(new TextBlock { Text = "Volum (litri):", FontWeight = FontWeights.Bold });
             TextBox txtVolum = new TextBox { Text = volum.ToString(), Margin = new Thickness(0, 0, 0, 10) };
             panel.Children.Add(txtVolum);
 
-            // Preț
             panel.Children.Add(new TextBlock { Text = "Preț (RON):", FontWeight = FontWeights.Bold });
             TextBox txtPret = new TextBox { Text = pret.ToString(), Margin = new Thickness(0, 0, 0, 20) };
             panel.Children.Add(txtPret);
 
-            // Buton Salvează
+
             Button btnSalveaza = new Button
             {
                 Content = "Salvează",
@@ -1730,7 +1723,7 @@ namespace PixelForge
                     {
                         MessageBox.Show("Modificare realizată cu succes!", "Succes", MessageBoxButton.OK, MessageBoxImage.Information);
                         FormPanel.Children.Clear();
-                        CaseButton_Click(null, null); // presupunem că ai un handler pentru lista carcaselor
+                        CaseButton_Click(null, null); 
                     }
                     else
                     {
@@ -1783,27 +1776,27 @@ namespace PixelForge
 
             StackPanel panel = new StackPanel { Margin = new Thickness(5) };
 
-            // Nume
+
             panel.Children.Add(new TextBlock { Text = "Nume:", FontWeight = FontWeights.Bold });
             TextBox txtNume = new TextBox { Text = nume, Margin = new Thickness(0, 0, 0, 10) };
             panel.Children.Add(txtNume);
 
-            // Eficiență
+
             panel.Children.Add(new TextBlock { Text = "Eficiență:", FontWeight = FontWeights.Bold });
             TextBox txtEficienta = new TextBox { Text = eficienta, Margin = new Thickness(0, 0, 0, 10) };
             panel.Children.Add(txtEficienta);
 
-            // Putere (W)
+
             panel.Children.Add(new TextBlock { Text = "Putere (W):", FontWeight = FontWeights.Bold });
             TextBox txtPutere = new TextBox { Text = putereW.ToString(), Margin = new Thickness(0, 0, 0, 10) };
             panel.Children.Add(txtPutere);
 
-            // Preț
+
             panel.Children.Add(new TextBlock { Text = "Preț (RON):", FontWeight = FontWeights.Bold });
             TextBox txtPret = new TextBox { Text = pret.ToString(), Margin = new Thickness(0, 0, 0, 20) };
             panel.Children.Add(txtPret);
 
-            // Buton Salvează
+
             Button btnSalveaza = new Button
             {
                 Content = "Salvează",
@@ -1842,7 +1835,7 @@ namespace PixelForge
                     {
                         MessageBox.Show("Modificare realizată cu succes!", "Succes", MessageBoxButton.OK, MessageBoxImage.Information);
                         FormPanel.Children.Clear();
-                        PsuButton_Click(null, null); // presupunem că ai un handler pentru lista surselor
+                        PsuButton_Click(null, null);
                     }
                     else
                     {

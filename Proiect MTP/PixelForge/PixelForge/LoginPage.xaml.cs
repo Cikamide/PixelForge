@@ -84,7 +84,7 @@ namespace PixelForge
         {
             RegisterPage registerWindow = new RegisterPage();
             registerWindow.Show();
-            this.Close(); // inchide fereastra de login
+            this.Close(); 
         }
     }
 }

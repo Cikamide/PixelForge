@@ -11,10 +11,10 @@ namespace PixelForge
         public StatusComenzi()
         {
             InitializeComponent();
-            IncarcaComenzi();  // Încărcăm toate comenzile la început
+            IncarcaComenzi();  
         }
 
-        // Metoda care încarcă comenzile din baza de date, eventual filtrate după numele clientului
+        
         private void IncarcaComenzi(string numeClient = "")
         {
             ComenziListPanel.Children.Clear();
@@ -23,7 +23,7 @@ namespace PixelForge
             {
                 connection.Open();
 
-                // Query cu filtrare opțională după client (LIKE + % pentru căutare parțială)
+     
                 string query = "SELECT * FROM Comenzi";
                 if (!string.IsNullOrEmpty(numeClient))
                 {
@@ -130,7 +130,7 @@ namespace PixelForge
             this.Close();
         }
 
-        // Butonul de cautare
+        
         private void SearchButton_Click(object sender, RoutedEventArgs e)
         {
             string textCautare = SearchTextBox.Text.Trim();

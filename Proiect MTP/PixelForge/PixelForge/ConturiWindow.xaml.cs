@@ -221,7 +221,7 @@ namespace PixelForge
                 }
 
                 MessageBox.Show("Cont adăugat cu succes!", "Succes", MessageBoxButton.OK, MessageBoxImage.Information);
-                ShowUsers(); // reîncarcă lista
+                ShowUsers(); 
             };
 
             panel.Children.Add(btnSalveaza);

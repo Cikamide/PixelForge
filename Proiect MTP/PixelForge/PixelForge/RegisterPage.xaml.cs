@@ -42,7 +42,7 @@ namespace PixelForge
             {
                 connection.Open();
 
-                // Verificăm dacă utilizatorul există deja
+                
                 string checkQuery = "SELECT COUNT(*) FROM Utilizator WHERE Username = @Username";
                 using (SQLiteCommand checkCmd = new SQLiteCommand(checkQuery, connection))
                 {
@@ -56,7 +56,7 @@ namespace PixelForge
                     }
                 }
 
-                // Inserăm utilizatorul cu tip implicit "CLIENT"
+                
                 string insertQuery = "INSERT INTO Utilizator (Username, Parola, Tip) VALUES (@Username, @Parola, 'CLIENT')";
                 using (SQLiteCommand insertCmd = new SQLiteCommand(insertQuery, connection))
                 {
@@ -73,7 +73,7 @@ namespace PixelForge
             MainWindow loginWindow = new MainWindow();
             loginWindow.Show();
 
-            // Închide fereastra curentă (cea care găzduiește pagina)
+            
             Window.GetWindow(this)?.Close();
         }
     }

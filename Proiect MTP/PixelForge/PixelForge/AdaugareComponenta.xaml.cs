@@ -32,9 +32,9 @@ namespace PixelForge
         }
         private void CpuButton_Click(object sender, RoutedEventArgs e)
         {
-            FormPanel.Children.Clear(); // golim orice conținut anterior
+            FormPanel.Children.Clear(); 
 
-            // Cream card-ul (Border) care conține toate controalele
+           
             Border card = new Border
             {
                 Background = Brushes.White,
@@ -46,7 +46,7 @@ namespace PixelForge
 
             StackPanel panel = new StackPanel { Margin = new Thickness(5) };
 
-            // Label + TextBox pentru "Nume"
+            
             panel.Children.Add(new TextBlock
             {
                 Text = "Nume:",
@@ -56,7 +56,7 @@ namespace PixelForge
             TextBox txtNume = new TextBox { Name = "TxtNume", Margin = new Thickness(0, 0, 0, 10) };
             panel.Children.Add(txtNume);
 
-            // Label + TextBox pentru "Socket"
+            
             panel.Children.Add(new TextBlock
             {
                 Text = "Socket:",
@@ -66,7 +66,7 @@ namespace PixelForge
             TextBox txtSocket = new TextBox { Name = "TxtSocket", Margin = new Thickness(0, 0, 0, 10) };
             panel.Children.Add(txtSocket);
 
-            // Label + TextBox pentru "FrecventaGhz"
+           
             panel.Children.Add(new TextBlock
             {
                 Text = "Frecvență (GHz):",
@@ -76,7 +76,7 @@ namespace PixelForge
             TextBox txtFrecventa = new TextBox { Name = "TxtFrecventa", Margin = new Thickness(0, 0, 0, 10) };
             panel.Children.Add(txtFrecventa);
 
-            // Label + ComboBox pentru "CoolerInclus"
+            
             panel.Children.Add(new TextBlock
             {
                 Text = "Cooler inclus:",
@@ -91,10 +91,10 @@ namespace PixelForge
             };
             cmbCooler.Items.Add("Da");
             cmbCooler.Items.Add("Nu");
-            cmbCooler.SelectedIndex = 0; // implicit "Da"
+            cmbCooler.SelectedIndex = 0; 
             panel.Children.Add(cmbCooler);
 
-            // Label + TextBox pentru "Pret"
+            
             panel.Children.Add(new TextBlock
             {
                 Text = "Preț (RON):",
@@ -104,7 +104,7 @@ namespace PixelForge
             TextBox txtPret = new TextBox { Name = "TxtPret", Margin = new Thickness(0, 0, 0, 20) };
             panel.Children.Add(txtPret);
 
-            // Buton „Salvează” care preia valorile și face inserarea
+            
             Button btnSalveaza = new Button
             {
                 Content = "Salvează",
@@ -116,14 +116,14 @@ namespace PixelForge
             };
             btnSalveaza.Click += (s, args) =>
             {
-                // Extragem valorile din controale
+                
                 string nume = txtNume.Text.Trim();
                 string socket = txtSocket.Text.Trim();
                 string frecText = txtFrecventa.Text.Trim();
                 string pretText = txtPret.Text.Trim();
                 bool coolerInclus = (cmbCooler.SelectedItem as string) == "Da";
 
-                // Validări simple (prezenta câmpuri)
+                
                 if (string.IsNullOrWhiteSpace(nume) ||
                     string.IsNullOrWhiteSpace(socket) ||
                     string.IsNullOrWhiteSpace(frecText) ||
@@ -145,7 +145,7 @@ namespace PixelForge
                     return;
                 }
 
-                // Inserăm în tabela Procesor
+                
                 try
                 {
                     using var connection = new SQLiteConnection("Data Source=DataBase.db");
@@ -175,16 +175,16 @@ namespace PixelForge
 
             panel.Children.Add(btnSalveaza);
 
-            // Setăm conținutul cardului și îl adăugăm în FormPanel
+            
             card.Child = panel;
             FormPanel.Children.Add(card);
         }
         private void CoolerButton_Click(object sender, RoutedEventArgs e)
         {
-            // Ștergem orice conținut anterior din FormPanel
+           
             FormPanel.Children.Clear();
 
-            // Creăm card-ul (Border) care va conține câmpurile de input
+            
             Border card = new Border
             {
                 Background = Brushes.White,
@@ -196,7 +196,7 @@ namespace PixelForge
 
             StackPanel panel = new StackPanel { Margin = new Thickness(5) };
 
-            // Label + TextBox pentru "Nume"
+           
             panel.Children.Add(new TextBlock
             {
                 Text = "Nume:",
@@ -206,7 +206,7 @@ namespace PixelForge
             TextBox txtNume = new TextBox { Margin = new Thickness(0, 0, 0, 10) };
             panel.Children.Add(txtNume);
 
-            // Label + ComboBox pentru "AIO" (BOOL)
+            
             panel.Children.Add(new TextBlock
             {
                 Text = "AIO:",
@@ -220,10 +220,10 @@ namespace PixelForge
             };
             cmbAio.Items.Add("Da");
             cmbAio.Items.Add("Nu");
-            cmbAio.SelectedIndex = 0; // implicit "Da"
+            cmbAio.SelectedIndex = 0; 
             panel.Children.Add(cmbAio);
 
-            // Label + TextBox pentru "RPM" (INTEGER)
+            
             panel.Children.Add(new TextBlock
             {
                 Text = "RPM:",
@@ -233,7 +233,7 @@ namespace PixelForge
             TextBox txtRpm = new TextBox { Margin = new Thickness(0, 0, 0, 10) };
             panel.Children.Add(txtRpm);
 
-            // Label + TextBox pentru "Preț" (REAL)
+            
             panel.Children.Add(new TextBlock
             {
                 Text = "Preț (RON):",
@@ -243,7 +243,7 @@ namespace PixelForge
             TextBox txtPret = new TextBox { Margin = new Thickness(0, 0, 0, 20) };
             panel.Children.Add(txtPret);
 
-            // Buton „Salvează” care preia valorile și face inserarea în tabela Cooler
+            
             Button btnSalveaza = new Button
             {
                 Content = "Salvează",
@@ -255,13 +255,13 @@ namespace PixelForge
             };
             btnSalveaza.Click += (s, args) =>
             {
-                // Extragem valorile din controale
+                
                 string nume = txtNume.Text.Trim();
                 bool aio = (cmbAio.SelectedItem as string) == "Da";
                 string rpmText = txtRpm.Text.Trim();
                 string pretText = txtPret.Text.Trim();
 
-                // Validări simple
+               
                 if (string.IsNullOrWhiteSpace(nume) ||
                     string.IsNullOrWhiteSpace(rpmText) ||
                     string.IsNullOrWhiteSpace(pretText))
@@ -282,7 +282,7 @@ namespace PixelForge
                     return;
                 }
 
-                // Inserăm în tabela Cooler
+                
                 try
                 {
                     using var connection = new SQLiteConnection("Data Source=DataBase.db");
@@ -311,16 +311,16 @@ namespace PixelForge
 
             panel.Children.Add(btnSalveaza);
 
-            // Setăm conținutul cardului și îl adăugăm în FormPanel
+            
             card.Child = panel;
             FormPanel.Children.Add(card);
         }
         private void MbButton_Click(object sender, RoutedEventArgs e)
         {
-            // Ștergem orice conținut anterior din FormPanel
+           
             FormPanel.Children.Clear();
 
-            // Creăm card-ul (Border) care va conține câmpurile de input
+            
             Border card = new Border
             {
                 Background = Brushes.White,
@@ -332,7 +332,7 @@ namespace PixelForge
 
             StackPanel panel = new StackPanel { Margin = new Thickness(5) };
 
-            // Label + TextBox pentru "Nume"
+            
             panel.Children.Add(new TextBlock
             {
                 Text = "Nume:",
@@ -342,7 +342,7 @@ namespace PixelForge
             TextBox txtNume = new TextBox { Margin = new Thickness(0, 0, 0, 10) };
             panel.Children.Add(txtNume);
 
-            // Label + TextBox pentru "Socket"
+            
             panel.Children.Add(new TextBlock
             {
                 Text = "Socket:",
@@ -352,7 +352,7 @@ namespace PixelForge
             TextBox txtSocket = new TextBox { Margin = new Thickness(0, 0, 0, 10) };
             panel.Children.Add(txtSocket);
 
-            // Label + TextBox pentru "Memorie" (INTEGER)
+            
             panel.Children.Add(new TextBlock
             {
                 Text = "Memorie (GB):",
@@ -362,7 +362,7 @@ namespace PixelForge
             TextBox txtMemorie = new TextBox { Margin = new Thickness(0, 0, 0, 10) };
             panel.Children.Add(txtMemorie);
 
-            // Label + TextBox pentru "Sloturi RAM" (INTEGER)
+           
             panel.Children.Add(new TextBlock
             {
                 Text = "Sloturi RAM:",
@@ -372,7 +372,7 @@ namespace PixelForge
             TextBox txtSloturiRam = new TextBox { Margin = new Thickness(0, 0, 0, 10) };
             panel.Children.Add(txtSloturiRam);
 
-            // Label + TextBox pentru "Sloturi M.2" (INTEGER)
+            
             panel.Children.Add(new TextBlock
             {
                 Text = "Sloturi M.2:",
@@ -382,7 +382,7 @@ namespace PixelForge
             TextBox txtSloturiM2 = new TextBox { Margin = new Thickness(0, 0, 0, 10) };
             panel.Children.Add(txtSloturiM2);
 
-            // Label + TextBox pentru "Preț" (REAL)
+            
             panel.Children.Add(new TextBlock
             {
                 Text = "Preț (RON):",
@@ -392,7 +392,7 @@ namespace PixelForge
             TextBox txtPret = new TextBox { Margin = new Thickness(0, 0, 0, 20) };
             panel.Children.Add(txtPret);
 
-            // Buton „Salvează” care preia valorile și face inserarea în tabela PlacaDeBaza
+            
             Button btnSalveaza = new Button
             {
                 Content = "Salvează",
@@ -404,7 +404,7 @@ namespace PixelForge
             };
             btnSalveaza.Click += (s, args) =>
             {
-                // Extragem valorile din controale
+                
                 string nume = txtNume.Text.Trim();
                 string socket = txtSocket.Text.Trim();
                 string memorieText = txtMemorie.Text.Trim();
@@ -412,7 +412,7 @@ namespace PixelForge
                 string sloturiM2Text = txtSloturiM2.Text.Trim();
                 string pretTextInner = txtPret.Text.Trim();
 
-                // Validări simple
+                
                 if (string.IsNullOrWhiteSpace(nume) ||
                     string.IsNullOrWhiteSpace(socket) ||
                     string.IsNullOrWhiteSpace(memorieText) ||
@@ -448,7 +448,7 @@ namespace PixelForge
                     return;
                 }
 
-                // Inserăm în tabela PlacaDeBaza
+                
                 try
                 {
                     using var connection = new SQLiteConnection("Data Source=DataBase.db");
@@ -479,16 +479,16 @@ namespace PixelForge
 
             panel.Children.Add(btnSalveaza);
 
-            // Setăm conținutul cardului și îl adăugăm în FormPanel
+            
             card.Child = panel;
             FormPanel.Children.Add(card);
         }
         private void RamiButton_Click(object sender, RoutedEventArgs e)
         {
-            // 1. Golim orice conținut anterior din FormPanel
+            
             FormPanel.Children.Clear();
 
-            // 2. Cream card-ul (Border) care va conține câmpurile de input
+            
             Border card = new Border
             {
                 Background = Brushes.White,
@@ -500,7 +500,7 @@ namespace PixelForge
 
             StackPanel panel = new StackPanel { Margin = new Thickness(5) };
 
-            // 3. Label + TextBox pentru "Nume"
+            
             panel.Children.Add(new TextBlock
             {
                 Text = "Nume:",
@@ -510,7 +510,7 @@ namespace PixelForge
             TextBox txtNume = new TextBox { Margin = new Thickness(0, 0, 0, 10) };
             panel.Children.Add(txtNume);
 
-            // 4. Label + TextBox pentru "Viteză" (INTEGER)
+            
             panel.Children.Add(new TextBlock
             {
                 Text = "Viteză (MHz):",
@@ -520,7 +520,7 @@ namespace PixelForge
             TextBox txtViteza = new TextBox { Margin = new Thickness(0, 0, 0, 10) };
             panel.Children.Add(txtViteza);
 
-            // 5. Label + TextBox pentru "Capacitate" (INTEGER)
+            
             panel.Children.Add(new TextBlock
             {
                 Text = "Capacitate (GB):",
@@ -530,7 +530,7 @@ namespace PixelForge
             TextBox txtCapacitate = new TextBox { Margin = new Thickness(0, 0, 0, 10) };
             panel.Children.Add(txtCapacitate);
 
-            // 6. Label + TextBox pentru "NrModule" (INTEGER)
+            
             panel.Children.Add(new TextBlock
             {
                 Text = "Număr module:",
@@ -540,7 +540,7 @@ namespace PixelForge
             TextBox txtNrModule = new TextBox { Margin = new Thickness(0, 0, 0, 10) };
             panel.Children.Add(txtNrModule);
 
-            // 7. Label + TextBox pentru "Preț" (REAL)
+            
             panel.Children.Add(new TextBlock
             {
                 Text = "Preț (RON):",
@@ -550,7 +550,7 @@ namespace PixelForge
             TextBox txtPret = new TextBox { Margin = new Thickness(0, 0, 0, 20) };
             panel.Children.Add(txtPret);
 
-            // 8. Buton „Salvează” care preia valorile și face inserarea în tabela Rami
+           
             Button btnSalveaza = new Button
             {
                 Content = "Salvează",
@@ -562,14 +562,14 @@ namespace PixelForge
             };
             btnSalveaza.Click += (s, args) =>
             {
-                // Extragem valorile din controale
+                
                 string nume = txtNume.Text.Trim();
                 string vitezaText = txtViteza.Text.Trim();
                 string capacitateText = txtCapacitate.Text.Trim();
                 string nrModuleText = txtNrModule.Text.Trim();
                 string pretTextInner = txtPret.Text.Trim();
 
-                // Validări minimale
+                
                 if (string.IsNullOrWhiteSpace(nume) ||
                     string.IsNullOrWhiteSpace(vitezaText) ||
                     string.IsNullOrWhiteSpace(capacitateText) ||
@@ -604,7 +604,7 @@ namespace PixelForge
                     return;
                 }
 
-                // Inserăm în tabela Rami
+                
                 try
                 {
                     using var connection = new SQLiteConnection("Data Source=DataBase.db");
@@ -634,7 +634,7 @@ namespace PixelForge
 
             panel.Children.Add(btnSalveaza);
 
-            // 9. Setăm conținutul cardului (Border) și îl adăugăm în FormPanel
+            
             card.Child = panel;
             FormPanel.Children.Add(card);
         }
@@ -653,27 +653,27 @@ namespace PixelForge
 
             StackPanel panel = new StackPanel { Margin = new Thickness(5) };
 
-            // Nume
+           
             panel.Children.Add(new TextBlock { Text = "Nume:", FontWeight = FontWeights.Bold });
             TextBox txtNume = new TextBox { Margin = new Thickness(0, 0, 0, 10) };
             panel.Children.Add(txtNume);
 
-            // Capacitate
+            
             panel.Children.Add(new TextBlock { Text = "Capacitate (GB):", FontWeight = FontWeights.Bold });
             TextBox txtCapacitate = new TextBox { Margin = new Thickness(0, 0, 0, 10) };
             panel.Children.Add(txtCapacitate);
 
-            // Tip
+           
             panel.Children.Add(new TextBlock { Text = "Tip (HDD / SSD / NVMe):", FontWeight = FontWeights.Bold });
             TextBox txtTip = new TextBox { Margin = new Thickness(0, 0, 0, 10) };
             panel.Children.Add(txtTip);
 
-            // Preț
+            
             panel.Children.Add(new TextBlock { Text = "Preț (RON):", FontWeight = FontWeights.Bold });
             TextBox txtPret = new TextBox { Margin = new Thickness(0, 0, 0, 20) };
             panel.Children.Add(txtPret);
 
-            // Buton Salvează
+            
             Button btnSalveaza = new Button
             {
                 Content = "Salvează",
@@ -757,22 +757,21 @@ namespace PixelForge
 
             StackPanel panel = new StackPanel { Margin = new Thickness(5) };
 
-            // Nume
+            
             panel.Children.Add(new TextBlock { Text = "Nume:", FontWeight = FontWeights.Bold });
             TextBox txtNume = new TextBox { Margin = new Thickness(0, 0, 0, 10) };
             panel.Children.Add(txtNume);
 
-            // MemorieGB
+           
             panel.Children.Add(new TextBlock { Text = "Memorie (GB):", FontWeight = FontWeights.Bold });
             TextBox txtMemorie = new TextBox { Margin = new Thickness(0, 0, 0, 10) };
             panel.Children.Add(txtMemorie);
 
-            // Pret
+          
             panel.Children.Add(new TextBlock { Text = "Preț (RON):", FontWeight = FontWeights.Bold });
             TextBox txtPret = new TextBox { Margin = new Thickness(0, 0, 0, 20) };
             panel.Children.Add(txtPret);
 
-            // Buton Salvează
             Button btnSalveaza = new Button
             {
                 Content = "Salvează",
@@ -853,22 +852,22 @@ namespace PixelForge
 
             StackPanel panel = new StackPanel { Margin = new Thickness(5) };
 
-            // Nume
+            
             panel.Children.Add(new TextBlock { Text = "Nume:", FontWeight = FontWeights.Bold });
             TextBox txtNume = new TextBox { Margin = new Thickness(0, 0, 0, 10) };
             panel.Children.Add(txtNume);
 
-            // Volum
+           
             panel.Children.Add(new TextBlock { Text = "Volum (litri):", FontWeight = FontWeights.Bold });
             TextBox txtVolum = new TextBox { Margin = new Thickness(0, 0, 0, 10) };
             panel.Children.Add(txtVolum);
 
-            // Pret
+            
             panel.Children.Add(new TextBlock { Text = "Preț (RON):", FontWeight = FontWeights.Bold });
             TextBox txtPret = new TextBox { Margin = new Thickness(0, 0, 0, 20) };
             panel.Children.Add(txtPret);
 
-            // Buton Salvează
+            
             Button btnSalveaza = new Button
             {
                 Content = "Salvează",
@@ -949,27 +948,27 @@ namespace PixelForge
 
             StackPanel panel = new StackPanel { Margin = new Thickness(5) };
 
-            // Nume
+            
             panel.Children.Add(new TextBlock { Text = "Nume:", FontWeight = FontWeights.Bold });
             TextBox txtNume = new TextBox { Margin = new Thickness(0, 0, 0, 10) };
             panel.Children.Add(txtNume);
 
-            // Eficienta
+            
             panel.Children.Add(new TextBlock { Text = "Eficiență (ex: 80+ Bronze):", FontWeight = FontWeights.Bold });
             TextBox txtEficienta = new TextBox { Margin = new Thickness(0, 0, 0, 10) };
             panel.Children.Add(txtEficienta);
 
-            // Putere (W)
+            
             panel.Children.Add(new TextBlock { Text = "Putere (W):", FontWeight = FontWeights.Bold });
             TextBox txtPutere = new TextBox { Margin = new Thickness(0, 0, 0, 10) };
             panel.Children.Add(txtPutere);
 
-            // Pret
+            
             panel.Children.Add(new TextBlock { Text = "Preț (RON):", FontWeight = FontWeights.Bold });
             TextBox txtPret = new TextBox { Margin = new Thickness(0, 0, 0, 20) };
             panel.Children.Add(txtPret);
 
-            // Buton Salvează
+            
             Button btnSalveaza = new Button
             {
                 Content = "Salvează",
